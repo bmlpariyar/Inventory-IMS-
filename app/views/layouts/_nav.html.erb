@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
+<nav class=" navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between">
     <div class="px-6 w-full flex flex-wrap items-center justify-between">
     <div class="flex items-center">
-        <a href="#!"><%= image_tag "logo2.png", class: "w-auto h-16" %></a>
-        <a href="#!">
-            <h1 class="text-2xl font-bold text-gray-800">StockPilot</h1>
-        </a>
+        <%= link_to root_path do %>
+            <%= image_tag("logo2.png", class: "w-auto h-10") %>
+        <% end %>
+        <%= link_to 'StockPilot', root_path, class:'text-2xl font-bold text-gray-600' %>
     </div>
     <div class="navbar-collapse collapse grow items-center" id="navbarSupportedContentY">
         <ul class="navbar-nav mr-auto lg:flex lg:flex-row">
