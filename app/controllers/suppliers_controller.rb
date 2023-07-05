@@ -26,8 +26,8 @@ class SuppliersController < ApplicationController
 
     respond_to do |format|
       if @supplier.save
-        format.html { redirect_to supplier_url(@supplier), notice: "Supplier was successfully created." }
-        format.json { render :show, status: :created, location: @supplier }
+        format.html { redirect_to new_supplier_path, notice: "Supplier was successfully created." }
+        format.json { render :new, status: :created, location: @supplier }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @supplier.errors, status: :unprocessable_entity }
@@ -51,12 +51,13 @@ class SuppliersController < ApplicationController
   # DELETE /suppliers/1 or /suppliers/1.json
   def destroy
     @supplier.destroy
-
+  
     respond_to do |format|
-      format.html { redirect_to suppliers_url, notice: "Supplier was successfully destroyed." }
+      format.html { redirect_to suppliers_url, notice: 'Supplier was successfully destroyed' }
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
